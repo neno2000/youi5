@@ -7,16 +7,6 @@ xmlns:f="sap.ui.layout.form"
 	<App>
 		<pages>
 			<Page id="page" title="{i18n>title}">
-
-				<ObjectHeader binding="{/ProductCollection/0}"
-											title="Kackelaka">
-					<attributes>
-						<ObjectAttribute text="{tt>/ahorro}"/>
-						<ObjectAttribute text="{tt>/gasto}"/>
-						<ObjectAttribute text="Hej3"/>
-						<ObjectAttribute text="Hej4"/>
-					</attributes>
-				</ObjectHeader>
 				<content>
 					<VBox fitContainer="true">
 							<f:SimpleForm id="SimpleFormDisplay480"
@@ -34,7 +24,7 @@ xmlns:f="sap.ui.layout.form"
 								<f:content>
 									<c:Title text="Office" />
 									<Label text="Name" />
-									<Text text="Red Point Stores" />
+									<Text text="{tt>/ahorro}" />
 									<Label text="Street/No." />
 									<Text text="Main St 1618" />
 									<Label text="ZIP Code/City" />
@@ -47,26 +37,8 @@ xmlns:f="sap.ui.layout.form"
 									<Label text="Twitter" />
 									<Text text="@sap" />
 								</f:content>
-								<f:layoutData>
-									<FlexItemData shrinkFactor="0" backgroundDesign="Solid" styleClass="sapContrastPlus"/>
-								</f:layoutData>
 							</f:SimpleForm>
 							<t:AnalyticalTable visibleRowCountMode="Auto" selectionMode="MultiToggle" rowHeight="32">
-								<t:toolbar>
-									<OverflowToolbar>
-										<Title text="Title Bar Here"/>
-										<ToolbarSpacer />
-										<SearchField width="12rem" />
-										<SegmentedButton>
-											<buttons>
-												<Button icon="sap-icon://table-view" />
-												<Button icon="sap-icon://bar-chart" />
-											</buttons>
-										</SegmentedButton>
-										<Button icon="sap-icon://group-2" type="Transparent" />
-										<Button icon="sap-icon://action-settings" type="Transparent" />
-									</OverflowToolbar>
-								</t:toolbar>
 								<t:columns>
 									<t:AnalyticalColumn />
 									<t:AnalyticalColumn />
