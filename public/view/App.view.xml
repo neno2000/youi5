@@ -1,0 +1,19 @@
+<mvc:View controllerName="sap.ui.demo.basicTemplate.controller.App"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page id="page" title="{i18n>title}">
+				<ObjectHeader binding="{/ProductCollection/0}"
+											title="Kackelaka">
+					<attributes>
+						<ObjectAttribute text="{tt>/ahorro}"/>
+						<ObjectAttribute text="{tt>/gasto}"/>
+						<ObjectAttribute text="Hej3"/>
+						<ObjectAttribute text="Hej4"/>
+					</attributes>
+				</ObjectHeader>
+
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
