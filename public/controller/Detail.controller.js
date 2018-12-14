@@ -5,7 +5,7 @@ sap.ui.define([
 ], function(Controller, JSONModel, formatter) {
 	"use strict";
 
-	return Controller.extend("sap.ui.demo.basicTemplate.controller.App", {
+	return Controller.extend("sap.ui.demo.basicTemplate.controller.Detail", {
 
 		formatter: formatter,
 

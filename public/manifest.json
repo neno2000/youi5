@@ -32,7 +32,7 @@
 
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.ui.demo.basicTemplate.view.App",
+			"viewName": "sap.ui.demo.basicTemplate.view.Main",
 			"type": "XML",
 			"async": true,
 			"id": "app"
