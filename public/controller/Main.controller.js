@@ -11,13 +11,6 @@ sap.ui.define([
 
 		onInit: function () {
 
-			var data = {
-				"ahorro" : "mucho",
-				"gasto" : "poco"
-			};
-
-			this.getView().setModel(new JSONModel(data), "tt");
-			console.log(data);
 
 		},
 
@@ -37,9 +30,7 @@ sap.ui.define([
 		},
 		onSearch: function(oEvent) {
 			// get fields values
-			//
-			console.log("I must search data");
-			console.log(oEvent);
+			// route to next window
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
       oRouter.navTo("detail");
 		}

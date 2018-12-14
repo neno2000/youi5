@@ -1,4 +1,7 @@
-<mvc:View controllerName="sap.ui.demo.basicTemplate.controller.Detail" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:c="sap.ui.core" xmlns:t="sap.ui.table" xmlns:f="sap.ui.layout.form" xmlns="sap.m">
+<mvc:View controllerName="sap.ui.demo.basicTemplate.controller.Detail"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns:c="sap.ui.core" xmlns:t="sap.ui.table"
+	xmlns:f="sap.ui.layout.form" xmlns="sap.m">
 	<App>
 		<pages>
 			<Page id="page" title="{i18n>title}">
