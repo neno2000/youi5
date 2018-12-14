@@ -37,9 +37,11 @@ sap.ui.define([
 		},
 		onSearch: function(oEvent) {
 			// get fields values
-			// 
+			//
 			console.log("I must search data");
 			console.log(oEvent);
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+      oRouter.navTo("detail");
 		}
 	});
 });
