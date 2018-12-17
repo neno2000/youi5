@@ -60,21 +60,29 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "viewPath": "sap.ui.demo.basicTemplate",
-        "controlId": "main",
+        "controlId": "app",
         "controlAggregation": "pages"
       },
       "routes": [
+				{
+					"pattern": "",
+					"name": "main",
+					"target": "main"
+				},
         {
           "pattern": "detail",
           "name": "detail",
           "target": "detail"
         }
+
       ],
-      "targets": {
+			"targets": {
+				"main": {
+					"viewName": ""
+				},
         "detail": {
           "viewName": "Detail"
         }
-      }
     },
     "resources": {
       "css": [
