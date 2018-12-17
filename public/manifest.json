@@ -31,9 +31,7 @@
   "sap.ui5": {
     "rootView": {
       "viewName": "sap.ui.demo.basicTemplate.view.App",
-      "type": "XML",
-      "async": true,
-      "id": "app"
+      "type": "XML"
     },
     "dependencies": {
       "minUI5Version": "1.56.0",
@@ -58,14 +56,15 @@
 					"targetAggregation" : "pages",
 					"controlId" : "app"
 
-				}
-			],
-			"targets": {
-            "Main": {
-               "viewName": "Main",
-               "viewLevel" : 1
-            }
-         }
+				},
+				{
+					"pattern": "Detail",
+					"name": "Detail",
+					"view" : "Detail",
+					"targetAggregation" : "pages",
+					"controlId" : "app"
+
+				}]
 		},
     "contentDensities": {
       "compact": true,

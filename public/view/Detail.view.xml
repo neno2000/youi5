@@ -1,12 +1,38 @@
 <mvc:View controllerName="sap.ui.demo.basicTemplate.controller.Detail"
-	xmlns:mvc="sap.ui.core.mvc" 
-	xmlns:c="sap.ui.core" xmlns:t="sap.ui.table"
-	xmlns:f="sap.ui.layout.form" xmlns="sap.m">
-	<App>
-		<pages>
-			<Page id="page" title="{i18n>title}">
-				<content>
-			  </content>
-		</pages>
-	</App>
+  xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.core"
+  xmlns:t="sap.ui.table" xmlns:f="sap.ui.layout.form" xmlns="sap.m">
+  <App>
+    <pages>
+      <Page id="page" title="{i18n>title}">
+        <content>
+          <VBox fitContainer="true">
+            <f:SimpleForm id="SimpleFormDisplay480" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" title="Hämta Företagsdata" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">
+              <f:content>
+                <c:Title text="Parametrar"/>
+                <Label text="Användarid"/>
+                <Input id="anvId" width="50%"/>
+                <Label text="Företag"/>
+                <Input id="forId" width="50%"/>
+                <Label text="Tjänst"/>
+                <Input id="tjaId" width="50%"/>
+                <c:Title text=""/>
+                <Label text="Datum"/>
+                <DatePicker id="datId" width="50%"/>
+                <Label text="Inkludera Avtalsplan"/>
+                <RadioButton id="inAvtId" width="50%"/>
+              </f:content>
+            </f:SimpleForm>
+          </VBox>
+        </content>
+        <footer>
+          <Toolbar>
+            <ToolbarSpacer/>
+            <Button icon="sap-icon://reset"  text="rensa parametrar" press=".onResett"/>
+            <Button icon="sap-icon://search" text="kör sökning"      press=".onSearch"/>
+          </Toolbar>
+        </footer>
+      </Page>
+    </pages>
+  </App>
+
 </mvc:View>

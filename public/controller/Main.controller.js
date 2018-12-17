@@ -30,7 +30,7 @@ sap.ui.define([
 			// get fields values
 			// route to next window
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-      oRouter.navTo("detail");
+      oRouter.navTo("Detail");
 		}
 	});
 });
