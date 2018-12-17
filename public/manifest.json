@@ -30,7 +30,7 @@
   },
   "sap.ui5": {
     "rootView": {
-      "viewName": "sap.ui.demo.basicTemplate.view.Main",
+      "viewName": "sap.ui.demo.basicTemplate.view.App",
       "type": "XML",
       "async": true,
       "id": "app"
@@ -43,6 +43,30 @@
         "sap.ui.layout": {}
       }
     },
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sap.ui.demo.basicTemplate.view",
+				"targetAggregation" : "pages"
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "Main",
+					"view" : "Main",
+					"targetAggregation" : "pages",
+					"controlId" : "app"
+
+				}
+			],
+			"targets": {
+            "Main": {
+               "viewName": "Main",
+               "viewLevel" : 1
+            }
+         }
+		},
     "contentDensities": {
       "compact": true,
       "cozy": true
@@ -55,35 +79,7 @@
         }
       }
     },
-    "routing": {
-      "config": {
-        "routerClass": "sap.m.routing.Router",
-        "viewType": "XML",
-        "viewPath": "sap.ui.demo.basicTemplate",
-        "controlId": "app",
-        "controlAggregation": "pages"
-      },
-      "routes": [
-				{
-					"pattern": "",
-					"name": "main",
-					"target": "main"
-				},
-        {
-          "pattern": "detail",
-          "name": "detail",
-          "target": "detail"
-        }
 
-      ],
-			"targets": {
-				"main": {
-					"viewName": ""
-				},
-        "detail": {
-          "viewName": "Detail"
-        }
-    },
     "resources": {
       "css": [
         {
