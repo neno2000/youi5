@@ -3,7 +3,7 @@
   xmlns:t="sap.ui.table" xmlns:f="sap.ui.layout.form" xmlns="sap.m">
   <App>
     <pages>
-      <Page id="page" title="{i18n>title}">
+      <Page id="page" showNavButton="true" navButtonPress="onNavBack" title="{i18n>title}" >
         <content>
           <VBox fitContainer="true">
             <f:SimpleForm id="SimpleFormDisplay480" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" title="Hämta Företagsdata" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">

@@ -28,7 +28,7 @@
           <Toolbar>
             <ToolbarSpacer/>
             <Button icon="sap-icon://reset"  text="rensa parametrar" press=".onResett"/>
-            <Button icon="sap-icon://search" text="kör sökning"      press=".onSearch"/>
+            <Button icon="sap-icon://search" text="sök företagsdata"      press=".onSearch"/>
           </Toolbar>
         </footer>
       </Page>

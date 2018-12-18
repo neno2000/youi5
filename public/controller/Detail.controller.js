@@ -19,6 +19,9 @@ sap.ui.define([
 			this.getView().setModel(new JSONModel(data), "tt");
 			console.log(data);
 
+		},
+		onNavBack: function () {
+			history.go(-1);
 		}
 	});
 });
