@@ -5,25 +5,94 @@
     <pages>
       <Page id="page" showNavButton="true" navButtonPress="onNavBack" title="{i18n>title}" >
         <content>
-          <VBox fitContainer="true">
-            <f:SimpleForm id="SimpleFormDisplay480" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" title="Hämta Företagsdata" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">
+          <VBox fitContainer="false">
+            <f:SimpleForm id="SimpleFormDisplay480" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" title="Hämta Företagsdata"
+							 labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">
               <f:content>
-                <c:Title text="Parametrar"/>
-                <Label text="Användarid"/>
-                <Input id="anvId" width="50%"/>
-                <Label text="Företag"/>
-                <Input id="forId" width="50%"/>
+                <c:Title text="Företagsdetaljer för"/>
+                <Label text="Organisationnummer"/>
+                <Text id="idOrgNo" width="50%"/>
+                <Label text="FöretagsNamn"/>
+                <Text id="idOrgNamn" width="50%"/>
                 <Label text="Tjänst"/>
-                <Input id="tjaId" width="50%"/>
-                <c:Title text=""/>
-                <Label text="Datum"/>
-                <DatePicker id="datId" width="50%"/>
-                <Label text="Inkludera Avtalsplan"/>
-                <RadioButton id="inAvtId" width="50%"/>
+                <Text id="id" width="50%"/>
               </f:content>
             </f:SimpleForm>
           </VBox>
         </content>
+				<Table id="idProductsTable"
+						inset="false"
+						items="{
+										path: '/ProductCollection',
+										sorter: {
+											path: 'Name'
+										}
+									}">
+						<headerToolbar>
+							<Toolbar>
+								<content>
+									<Title text="Products" level="H2"/>
+								</content>
+							</Toolbar>
+						</headerToolbar>
+								<columns>
+									<Column
+										width="12em">
+										<Text text="Product" />
+									</Column>
+									<Column
+										minScreenWidth="Tablet"
+										demandPopin="true">
+										<Text text="Supplier" />
+									</Column>
+									<Column
+										minScreenWidth="Desktop"
+										demandPopin="true"
+										hAlign="End">
+										<Text text="Dimensions" />
+									</Column>
+									<Column
+										minScreenWidth="Desktop"
+										demandPopin="true"
+										hAlign="Center">
+										<Text text="Weight" />
+									</Column>
+									<Column
+										hAlign="End">
+										<Text text="Price" />
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<ObjectIdentifier
+												title="{Name}"
+												text="{ProductId}"/>
+											<Text
+												text="{SupplierName}" />
+											<Text
+												text="{Width} x {Depth} x {Height} {DimUnit}" />
+											<ObjectNumber
+												number="{WeightMeasure}"
+												unit="{WeightUnit}"
+												state="{
+													parts: [
+														{path: 'WeightMeasure'},
+														{path: 'WeightUnit'}
+													],
+													formatter: 'sap.m.sample.Table.Formatter.weightState'
+												}" />
+											<ObjectNumber
+													number="{
+														parts:[{path:'Price'},{path:'CurrencyCode'}],
+														type: 'sap.ui.model.type.Currency',
+														formatOptions: {showMeasure: false}
+													}"
+													unit="{CurrencyCode}" />
+										</cells>
+									</ColumnListItem>
+								</items>
+								</Table>
         <footer>
           <Toolbar>
             <ToolbarSpacer/>
