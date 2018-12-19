@@ -10,6 +10,8 @@ sap.ui.define([
 		formatter: formatter,
 
 		onInit: function () {
+			console.log(location.hostname);
+			console.log(location.port);
 		},
 
 		onResett: function(oEvent) {
@@ -38,26 +40,24 @@ sap.ui.define([
 			var qs = "";
 		  if (anvandare) {
 				qs = qs + "&anvandare=" + anvandare;
-				console.log(qs);
 			}
 			if (foretag) {
 				qs = qs + "&orgnummer=" + foretag;
-				console.log(qs);
 			}
 
 			if (tjanst) {
 				qs = qs + "&tjanst=" + tjanst;
-				console.log(qs);
 			}
 
 			if (datum) {
+				//convert datum till agreed format
+				var d = datum.split('/');
+				datum = [d[2], d[1], d[0]].join('-');
 			  qs = qs + "&datum=" + datum;
-				console.log(qs);
 			}
 
 			if (avtalsplan) {
 				qs = qs + "&avtalsplan=" + "X";
-				console.log(qs);
 			}
 			// do the Ajax Call
       var baseUrl = "http://localhost:5000";
