@@ -60,8 +60,19 @@ sap.ui.define([
 				qs = qs + "&avtalsplan=" + "X";
 			}
 			// do the Ajax Call
-      var baseUrl = "http://localhost:5000";
-			var client = "120";
+			var client = "100";		    		//default value, manually sätt during dev
+      var baseUrl = "";							//dafault value in CRM
+
+			if location.hostname === "localhost"{
+				var baseUrl = "http://localhost:5000";
+			}
+		  else if (location.hostname === "sandbox.server") {
+		  	client = "120";					//sandbox
+			}
+			else if (location.hostname === "dev.server") {
+		  	client = "120";					//devvelopment
+			}
+
 			var urlPath = "/sap/bc/collectum/foretag/organisation/organisation";
 			var url = baseUrl + urlPath + "?" + "sap-client=" + client + qs;
 			console.log(url);
