@@ -10,16 +10,25 @@ sap.ui.define([
 		formatter: formatter,
 
 		onInit: function () {
-
-			var data = {
-				"ahorro" : "mucho",
-				"gasto" : "poco"
-			};
-
-			this.getView().setModel(new JSONModel(data), "tt");
-			console.log(data);
-
+			var myModel = sap.ui.getCore().getModel("oParams");
+			var oTable = this.byId("idKstTable");
+			var orgno = myModel.getData().orgno[0].orgNr;
+	    this.getView().byId("idOrgNo").setText(orgno);
+			var forNamn = myModel.getData().orgno[0].ftgnamn;
+			this.getView().byId("idOrgNamn").setText(forNamn);
+			var bpNo = myModel.getData().orgno[0].foretag;
+			this.getView().byId("bpNo").setText(bpNo);
+			oTable.setModel(myModel);
+			console.log(oTable);
 		},
+		_handleRouteMatched: function (evt) {
+
+		//load a model, show a dialog
+			console.log(this);
+			console.log(evt);
+
+	  },
+
 		onNavBack: function () {
 			history.go(-1);
 		}
