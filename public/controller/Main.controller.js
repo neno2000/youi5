@@ -59,21 +59,21 @@ sap.ui.define([
 			if (avtalsplan) {
 				qs = qs + "&avtalsplan=" + "X";
 			}
-			// do the Ajax Call
+
+			// before an AJAX call, get the configuration information to
+			// retrieve to make the rigth AJAX call
+			var conf = this.getView().getModel("conf").getData();
+			// do the Ajax Call, set default data
 			var client = "100";		    		//default value, manually sätt during dev
       var baseUrl = "";							//dafault value in CRM
-
-			if location.hostname === "localhost"{
-				var baseUrl = "http://localhost:5000";
+      if (conf.conf[location.hostname].baseUrl){
+				baseUrl = conf.conf[location.hostname].baseUrl;
 			}
-		  else if (location.hostname === "sandbox.server") {
-		  	client = "120";					//sandbox
+			if (conf.conf[location.hostname].client) {
+				client =  conf.conf[location.hostname].client;
 			}
-			else if (location.hostname === "dev.server") {
-		  	client = "120";					//devvelopment
-			}
-
-			var urlPath = "/sap/bc/collectum/foretag/organisation/organisation";
+			var urlPath = conf.services.organisation;
+			console.log(client);
 			var url = baseUrl + urlPath + "?" + "sap-client=" + client + qs;
 			console.log(url);
 			var settings = {

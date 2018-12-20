@@ -10,7 +10,13 @@
     "title": "{{appTitle}}",
     "description": "{{appDescription}}",
     "resources": "resources.json",
-    "ach": "ach"
+    "ach": "ach",
+    "dataSources": {
+			"conf_model": {
+				"uri": "model/conf.json",
+				"type": "JSON"
+			}
+		}
   },
   "sap.ui": {
     "technology": "UI5",
@@ -76,7 +82,11 @@
         "settings": {
           "bundleName": "sap.ui.demo.basicTemplate.i18n.i18n"
         }
-      }
+      },
+      "conf": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "conf_model"
+			}
     },
 
     "resources": {
